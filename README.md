@@ -6,7 +6,7 @@ v.erase(unique(v.begin(),v.end()),v.end());
 ```
 
 ### 快速幂
-::::success[[P1226 【模板】快速幂](https://www.luogu.com.cn/problem/P1226)]
+[[P1226 【模板】快速幂](https://www.luogu.com.cn/problem/P1226)]
 ```cpp
 int main(){
     A = a , B = b;
@@ -18,12 +18,12 @@ int main(){
     printf("%lld^%lld mod %lld=%lld\n",A,B,p,ans);
 }
 ```
-::::
+
 ### 二分答案  
-::::info[提示]
+[提示]
 如果能够用 $x$ 次攻击消灭所有的怪物，答案就一定不超过 $x$。如果不能用 $x$ 次攻击消灭所有的怪物，答案就一定比 $x$ 更大。答案具有单调性，可以用二分搜索解决问题。只要能知道怎么判定 $x$ 次攻击是否足够消灭所有的怪物，就可以解决这道题。
-::::
-::::success[[[ABC063D] Widespread](https://www.luogu.com.cn/problem/AT_arc075_b)]
+
+[[[ABC063D] Widespread](https://www.luogu.com.cn/problem/AT_arc075_b)]
 ```cpp lines=16-25
 bool check(int x){
     int cnt = 0;
@@ -53,10 +53,10 @@ signed main(){
     cout << ans;
 }
 ```
-::::
+
 ### 离散化  
 核心思想：将超大范围的数据映射到 $1\sim m$ 的整数范围内（排名），保持原始数据的大小关系。  
-::::success[Code]
+[Code]
 ```cpp
 /* n表示点数，m表示去重后映射到1~m */
 int n,m;
@@ -76,10 +76,10 @@ void solve(){
     }
 }
 ```
-::::
+
 ### 三分/函数
 找单峰函数的极值。
-::::success[[P1883 【模板】三分](https://www.luogu.com.cn/problem/P1883)  ]
+[[P1883 【模板】三分](https://www.luogu.com.cn/problem/P1883)  ]
 ```cpp
 double solve(){
     double l = 0,r = 1000,mid1,mid2;
@@ -97,10 +97,10 @@ double solve(){
     return f(l);
 }
 ```
-::::
+
 ### 单调队列/滑动窗口
 长度为 $k$ 的窗口，求窗口内最大值。
-::::success[[P1886 【模板】单调队列](https://www.luogu.com.cn/problem/P1886)  ]
+[[P1886 【模板】单调队列](https://www.luogu.com.cn/problem/P1886)  ]
 ```cpp
 deque<int>Q;//Q里存放下标
 int main(){
@@ -114,13 +114,13 @@ int main(){
     }
 }
 ```
-::::
+
 ### 单调栈
 - 寻找以某个值为最小/大值的最大区间（正反各跑一边）。
 - 给出项数为 $n$ 的整数数列 $a_{1 \dots n}$。
 定义函数 $f(i)$ 代表数列中第 $i$ 个元素之后第一个大于 $a_i$ 的元素的**下标**，即 $f(i)=\min_{i<j\leq n, a_j > a_i} \{j\}$。若不存在，则 $f(i)=0$。
 
-::::success[[P5788 【模板】单调栈](https://www.luogu.com.cn/problem/P5788)  ]
+[[P5788 【模板】单调栈](https://www.luogu.com.cn/problem/P5788)  ]
 ```cpp
 int main(){
     cin >> n;
@@ -137,11 +137,11 @@ int main(){
     }
 }
 ```
-::::
+
 ### 线段树
 1. 将某区间每一个数加上 $k$。
 2. 求出某区间每一个数的和。
-::::success[[P3372 【模板】线段树 1](https://www.luogu.com.cn/problem/P3372)]
+[[P3372 【模板】线段树 1](https://www.luogu.com.cn/problem/P3372)]
 ```cpp
 #define int long long
 class segmentTree{
@@ -198,9 +198,9 @@ public:
     }
 }T;
 ```
-::::
+
 ### 并查集
-::::success[[P3367 【模板】并查集](https://www.luogu.com.cn/problem/P3367)]
+[[P3367 【模板】并查集](https://www.luogu.com.cn/problem/P3367)]
 ```cpp
 int Find(int x){
     if(fa[x]==x)return x;
@@ -211,10 +211,10 @@ void Merge(int A,int B){
     if(A!=B) fa[A] = B;
 }
 ```
-::::
+
 ### 最小生成树
 有 $n$ 朵云，你要将它们连成 $k$ 个棉花糖，将 $X_i$ 云朵和 $Y_i$ 连接起来需要 $L_i$ 的代价，求最小代价。
-::::success[[P1195 口袋的天空](https://www.luogu.com.cn/problem/P1195)]
+[[P1195 口袋的天空](https://www.luogu.com.cn/problem/P1195)]
 ```cpp
 int fa[1010];  // 定义父亲
 struct edge {
@@ -261,9 +261,9 @@ int main() {
   kruskal();
 }
 ```
-::::
+
 ### 最近公共祖先 LCA | 链式前向星
-::::success[[P3379 【模板】最近公共祖先（LCA）](https://www.luogu.com.cn/problem/P3379)]
+[[P3379 【模板】最近公共祖先（LCA）](https://www.luogu.com.cn/problem/P3379)]
 ```cpp
 int to[maxn],nxt[maxn];
 int tot,Head[maxn],depth[maxn];
@@ -315,9 +315,9 @@ int main(){
 	}
 }
 ```
-::::
+
 ### 单源最短路径
-::::success[[P4779 【模板】单源最短路径（标准版）](https://www.luogu.com.cn/problem/P4779)]
+[[P4779 【模板】单源最短路径（标准版）](https://www.luogu.com.cn/problem/P4779)]
 ```cpp
 const int maxn = 2e5+5, inf = (1<<30);
 class Graph{
@@ -366,11 +366,11 @@ int main(){
     G.dij();
 }
 ```
-::::
+
 ### 连通性相关
 #### 强连通分量
 强连通的定义是：有向图 G 强连通是指，G 中任意两个结点连通。
-::::success[Tarjan 算法求强连通分量]
+[Tarjan 算法求强连通分量]
 ```cpp
 int dfn[N], low[N], dfncnt, s[N], in_stack[N], tp;
 int scc[N], sc;  // 结点 i 所在 SCC 的编号
@@ -397,10 +397,10 @@ void tarjan(int u) {
   }
 }
 ```
-::::
+
 #### 双连通分量
 在一张连通的无向图中，对于两个点 $u$ 和 $v$，如果无论删去哪条边（只能删去一条）都不能使它们不连通，我们就说 $u$ 和 $v$ 边双连通。
-::::success[Tarjan 算法求双连通分量]
+[Tarjan 算法求双连通分量]
 ```cpp
 int n, m, ans;
 int tot = 1, hd[N];
@@ -452,10 +452,10 @@ int main() {
   }
 }
 ```
-::::
+
 #### 割点
 对于一个无向图，如果把一个点删除后这个图的极大连通分量数增加了，那么这个点就是这个图的割点（又称割顶）。
-::::success[Tarjan 算法求割点]
+[Tarjan 算法求割点]
 ```cpp
 //洛谷 P3388 【模板】割点（割顶）
 int dfn[100001], low[100001], idx, res;
@@ -505,10 +505,10 @@ int main() {
     if (flag[i]) cout << i << " ";
 }
 ```
-::::
+
 #### 割边
 对于一个无向图，如果删掉一条边后图中的连通分量数增加了，则称这条边为桥或者割边。严谨来说，就是：假设有连通图 $G=\{V,E\}$，$e$ 是其中一条边（即$e \in E$），如果 $G-e$ 是不连通的，则 $e$ 是图 $G$ 的一条割边（桥）。
-::::success[Tarjan 算法求桥]
+[Tarjan 算法求桥]
 ```cpp
 /* 其中，当 isbridge[x] 为真时，(father[x],x) 为一条割边。 */
 int low[MAXN], dfn[MAXN], idx;
@@ -533,11 +533,11 @@ void tarjan(int u, int fa) {
   }
 }
 ```
-::::
+
 ### 字典树
 给定 $n$ 个模式串 $s_1, s_2, \dots, s_n$ 和 $q$ 次询问，每次询问给定一个文本串 $t_i$，请回答 $s_1 \sim s_n$ 中有多少个字符串 $s_j$ 满足 $t_i$ 是 $s_j$ 的**前缀**。
 输入的字符串大小敏感。例如，字符串 `Fusu` 和字符串 `fusu` 不同。
-::::success[[P8306 【模板】字典树](https://www.luogu.com.cn/problem/P8306)]
+[[P8306 【模板】字典树](https://www.luogu.com.cn/problem/P8306)]
 ```cpp
 int T,n,q; string s;
 class Trie{
@@ -600,11 +600,11 @@ int main(){
     }
 }
 ```
-::::
+
 ### 二元一次不定方程 | gcd
 $\gcd$ ：最大公约数  
 $ex\gcd$：求 $ax+by=\gcd(a,b)$ 的整数解
-::::success[gcd和exgcd]
+[gcd和exgcd]
 ```cpp
 int gcd(int a, int b) { return b == 0 ? a : gcd(b, a % b); }
 
@@ -620,7 +620,7 @@ void exgcd(ll a,ll b){
 	y=t-a/b*y;
 }
 ```
-::::
+
 给定不定方程
 
 $$ax+by=c$$
@@ -628,7 +628,7 @@ $$ax+by=c$$
 若该方程无整数解，输出 $-1$。  
 若该方程有整数解，且有正整数解，则输出其**正整数**解的数量，所有**正整数**解中 $x$ 的最小值，所有**正整数**解中 $y$ 的最小值，所有**正整数**解中 $x$ 的最大值，以及所有**正整数**解中 $y$ 的最大值。  
 若方程有整数解，但没有正整数解，你需要输出所有**整数解**中 $x$ 的最小正整数值， $y$ 的最小正整数值。
-::::success[[P5656 【模板】二元一次不定方程 (exgcd)](https://www.luogu.com.cn/problem/P5656)]
+[[P5656 【模板】二元一次不定方程 (exgcd)](https://www.luogu.com.cn/problem/P5656)]
 ```cpp
 ll x,y;
 ll exgcd(ll a,ll b){
@@ -668,10 +668,10 @@ int main(){
 	}
 }
 ```
-::::
+
 ### 二维偏序 | 离线二维数点 | BIT
 给你一个长为 $n$ 的序列 $a$，有 $m$ 次询问，每次询问给定 $l,r,x$，求 $[l,r]$ 区间中小于等于 $x$ 的元素个数。
-::::success[[P10814 【模板】离线二维数点](https://www.luogu.com.cn/problem/P10814)]
+[[P10814 【模板】离线二维数点](https://www.luogu.com.cn/problem/P10814)]
 ```cpp
 struct node {
 	int k, id, x, val;
@@ -711,4 +711,4 @@ signed main() {
 	for (int i = 1; i <= m; ++i) write(ans[i]);
 }
 ```
-::::
+
